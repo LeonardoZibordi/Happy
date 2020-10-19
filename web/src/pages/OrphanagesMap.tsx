@@ -1,11 +1,18 @@
-import React from 'react'
-import { FiPlus } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import mapMarkerImg from '../images/mapMarker.svg'
-import '../styles/pages/orphanages-map.css'
-import { Map, TileLayer } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css'
+import React from 'react';
+import { FiPlus } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import mapMarkerImg from '../images/mapMarker.svg';
+import '../styles/pages/orphanages-map.css';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import Leaflet from 'leaflet';
 
+const mapIcon = Leaflet.icon({
+  iconUrl: mapMarkerImg,
+  iconSize: [58, 68],
+  iconAnchor: [29, 68],
+  popupAnchor: [170, 2],
+});
 
 function OrphanagesMap() {
   return (
@@ -30,12 +37,21 @@ function OrphanagesMap() {
         zoom={15}
         style={{ width: '100%', height: '100% ' }}
       >
-
         <TileLayer
           // url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
           url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-        // url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          // url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        <Marker
+          position={[-22.7239639, -47.3257981]}
+          icon={mapIcon}
+          className="map-popup"
+        >
+          <Popup closeButton={false} minWidth={240} maxWidth={240}>
+            Lar das meninas
+          </Popup>
+        </Marker>
       </Map>
 
       <Link to="" className="create-orphanage">
