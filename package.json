@@ -1,0 +1,11 @@
+{
+  "name": "Happy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LeonardoZibordi/Happy.git",
+  "author": "Leonardo Zibordi <leonardo.zibordi@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.11.0"
+  }
+}
