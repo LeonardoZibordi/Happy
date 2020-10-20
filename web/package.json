@@ -25,6 +25,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "eslintConfig": {
+    "extends": "react-app",
+    "parser": "babel-eslint"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -39,8 +43,6 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.52",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-leaflet": "^2.5.2",
     "@types/react-router-dom": "^5.1.6"
   }
 }
