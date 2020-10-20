@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiPlus } from 'react-icons/fi';
+import { FiArrowRight, FiPlus } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import mapMarkerImg from '../images/mapMarker.svg';
 import '../styles/pages/orphanages-map.css';
@@ -48,13 +48,21 @@ function OrphanagesMap() {
           icon={mapIcon}
           className="map-popup"
         >
-          <Popup closeButton={false} minWidth={240} maxWidth={240}>
+          <Popup
+            closeButton={false}
+            minWidth={240}
+            maxWidth={240}
+            className="map-popup"
+          >
             Lar das meninas
+            <Link to="/orphanages/1">
+              <FiArrowRight size={20} color="#FFF" />
+            </Link>
           </Popup>
         </Marker>
       </Map>
 
-      <Link to="" className="create-orphanage">
+      <Link to="/orphanages/create" className="create-orphanage">
         <FiPlus size={32} color="#FFF" />
       </Link>
     </div>
