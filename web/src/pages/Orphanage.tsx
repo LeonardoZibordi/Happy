@@ -38,6 +38,7 @@ export default function Orphanage() {
   }, [params.id]);
 
   if (!orphanage) {
+    // TODO Criar uma tela de carregamento //
     return <p>Carregano...</p>;
   }
 
